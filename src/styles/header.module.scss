@@ -1,0 +1,33 @@
+@use "./palette.module.scss" as palette;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+.main {
+
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+  height: 75px;
+
+  &__txt {
+    padding: 5px;
+    margin: 0;
+    background-clip: inherit;
+    background-image: linear-gradient(to right, #377b83, #1f9696, #038b03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  &__link {
+
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+  }
+
+}
