@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import styles from "../styles/landingPage.module.scss";
+import styles from "../styles/landing.module.scss";
 import { Button, Container, Input, PressEvent, Spacer } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 

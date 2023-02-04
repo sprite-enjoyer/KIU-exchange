@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import { NextUIProvider, createTheme } from '@nextui-org/react';
 
-const theme = createTheme({
+const myLightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
@@ -17,7 +17,7 @@ const theme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
 
   return (
-    <NextUIProvider theme={theme}>
+    <NextUIProvider theme={myLightTheme}>
       <Component {...pageProps} />
     </NextUIProvider>
   );

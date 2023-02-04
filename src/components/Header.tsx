@@ -1,5 +1,5 @@
 import styles from "../styles/header.module.scss";
-import { Card, Container, Image, Link, Spacer, Text } from "@nextui-org/react";
+import { Image, Link, Text } from "@nextui-org/react";
 
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
         target="_blank"
         className={styles["main__link"]}
       >
-        <Image css={{ marginBottom: "0px" }} src={"/github.svg"} width={"30px"} objectFit="contain" />
+        <Image src={"/github.svg"} width={"30px"} />
       </Link>
     </div >
   );

@@ -1,7 +1,11 @@
-@use "./palette.module.scss" as palette;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-.main {
+$pink: rgba(217, 139, 139, 0.3);
+$darkGreen: #255459;
+$lightGreen: #177373;
+$gradientGreen: linear-gradient(90deg, #3F9B9B 20%, #64B2B2 40%, #8ACCCC 60%, #B0E5E5 80%, #D5FFFF 100%);
+
+@mixin mainTheme {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -12,5 +16,5 @@
   justify-content: center;
   align-items: center;
   font-family: "Lato", sans-serif;
-  background-color: palette.$pink;
+  background-color: $pink;
 }

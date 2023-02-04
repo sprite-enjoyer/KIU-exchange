@@ -1,0 +1,5 @@
+@use "./mainTheme.module.scss" as main;
+
+.main {
+  @include main.mainTheme;
+}

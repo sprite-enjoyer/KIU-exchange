@@ -1,0 +1,20 @@
+@use "../styles/mainTheme.module.scss" as main;
+
+.innerCard {
+  $cardColor: main.$lightGreen;
+}
+
+.itemOffered {
+  background: linear-gradient(to right, #Ff78b2, #f36bb6, #de5d91, #DE3980, #cc3473);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.itemWanted {
+  background: linear-gradient(to right, #31E0E0, #2fe2e2, #2adddd, #23a8a8, #23c3c3);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
