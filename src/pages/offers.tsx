@@ -7,13 +7,13 @@ import { Container } from "@nextui-org/react";
 const fakeOffersList: OfferProps[] = [
   {
     offerID: 1,
-    offerMaker: "dildoLeggings",
-    itemWanted: "ganja",
+    offerMaker: "bilbo leggings",
+    itemWanted: "telefoni",
     itemOffered: "saponi"
   },
   {
     offerID: 2,
-    offerMaker: "sam ganja",
+    offerMaker: "sam gemji",
     itemWanted: "televizori",
     itemOffered: "balzami"
   },
@@ -24,41 +24,39 @@ const fakeOffersList: OfferProps[] = [
     itemOffered: "tvitmfrinavi"
   }, {
     offerID: 4,
-    offerMaker: "celqi gogos postebi",
-    itemWanted: "siyvaruli",
-    itemOffered: "gasiebuli traki"
+    offerMaker: "zaali",
+    itemWanted: "gitara",
+    itemOffered: "fleita"
   }
 ]
 
 const offers = () => {
   return (
-    <>
+    <Container responsive fluid className={styles["main"]} >
       <Header />
-      <Container css={{ overflow: "scroll" }} fluid className={styles["main"]} >
-        <Container
-          display="flex"
-          direction="column"
-          justify="center"
-          alignContent="center"
-          css={{ marginTop: "20vh", gap: "20px" }}
-        >
+      <Container
+        display="flex"
+        direction="column"
+        justify="center"
+        alignContent="center"
+        css={{ marginTop: "20vh", gap: "20px" }}
+      >
+        <OfferCard
+          key={9999}
+          offerID={9999}
+          offerMaker={"imena me ra"}
+          itemWanted={"xelis kremi "}
+          itemOffered={"xinkali"} />
+        {fakeOffersList.map((offer: OfferProps) =>
           <OfferCard
-            key={9999}
-            offerID={9999}
-            offerMaker={"imena me ra"}
-            itemWanted={"xelis da yveris kremi sammagi "}
-            itemOffered={"xinkali alublis gemoti"} />
-          {fakeOffersList.map((offer: OfferProps) =>
-            <OfferCard
-              key={offer.offerID}
-              offerID={offer.offerID}
-              offerMaker={offer.offerMaker}
-              itemWanted={offer.itemWanted}
-              itemOffered={offer.itemOffered}
-            />)}
-        </Container>
+            key={offer.offerID}
+            offerID={offer.offerID}
+            offerMaker={offer.offerMaker}
+            itemWanted={offer.itemWanted}
+            itemOffered={offer.itemOffered}
+          />)}
       </Container>
-    </>
+    </Container>
   )
 }
 
