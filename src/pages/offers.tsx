@@ -4,31 +4,39 @@ import styles from "../styles/offers.module.scss";
 import { OfferProps } from "@/components/OfferCard";
 import { Container } from "@nextui-org/react";
 
-const fakeOffersList: OfferProps[] = [
+const fakeOffersList: Omit<OfferProps, "mini">[] = [
   {
     offerID: 1,
     offerMaker: "bilbo leggings",
     itemWanted: "telefoni",
-    itemOffered: "saponi"
+    itemOffered: "saponi",
+    location: "F344",
+    description: "zaan magari ragaca",
   },
   {
     offerID: 2,
     offerMaker: "sam gemji",
     itemWanted: "televizori",
-    itemOffered: "balzami"
+    itemOffered: "balzami",
+    location: "F344",
+    description: "zaan magari ragaca",
   },
   {
     offerID: 3,
     offerMaker: "facha zazulia",
     itemWanted: "cxeni",
-    itemOffered: "tvitmfrinavi"
+    itemOffered: "tvitmfrinavi",
+    location: "F344",
+    description: "zaan magari ragaca",
   }, {
     offerID: 4,
     offerMaker: "zaali",
     itemWanted: "gitara",
-    itemOffered: "fleita"
+    itemOffered: "fleita",
+    location: "F344",
+    description: "zaan magari ragaca",
   }
-]
+];
 
 const offers = () => {
   return (
@@ -39,21 +47,27 @@ const offers = () => {
         direction="column"
         justify="center"
         alignContent="center"
-        css={{ marginTop: "20vh", gap: "20px" }}
+        css={{ marginTop: "15vh", gap: "20px", marginBottom: "50px" }}
       >
         <OfferCard
           key={9999}
           offerID={9999}
           offerMaker={"imena me ra"}
-          itemWanted={"xelis kremi "}
+          itemWanted={"xelis kremi"}
+          location="F344"
+          description="kai rame ra"
+          mini={true}
           itemOffered={"xinkali"} />
-        {fakeOffersList.map((offer: OfferProps) =>
+        {fakeOffersList.map((offer: Omit<OfferProps, "mini">) =>
           <OfferCard
             key={offer.offerID}
             offerID={offer.offerID}
             offerMaker={offer.offerMaker}
             itemWanted={offer.itemWanted}
             itemOffered={offer.itemOffered}
+            location={offer.location}
+            description={offer.description}
+            mini
           />)}
       </Container>
     </Container>

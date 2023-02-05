@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
+$green1: #145672;
+$green2: #26b3b3;
+$green3: #22b651;
+$purple1: #9d64d5;
 $pink: rgba(217, 139, 139, 0.3);
-$darkGreen: #255459;
-$lightGreen: #177373;
-$gradientGreen: linear-gradient(90deg, #3F9B9B 20%, #64B2B2 40%, #8ACCCC 60%, #B0E5E5 80%, #D5FFFF 100%);
+$pink1: #de5da4;
+$pink2: #de3994;
+$pink3: #cc348d;
+$gradientGreen: linear-gradient(to right, #145672, #26b3b3, #22b651);
+$gradientPink: linear-gradient(to right, #9d64d5, #de5da4, #de3994, #cc348d);
 
 @mixin mainTheme {
   position: absolute;
+  max-width: 100vw;
+  min-height: 100vh;
   width: 100vw;
   height: 100vh;
   overflow: hidden;

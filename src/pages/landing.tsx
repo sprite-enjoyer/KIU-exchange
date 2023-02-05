@@ -45,7 +45,6 @@ const LandingPage = () => {
             css={{ width: "60vw", "@xs": { width: "15vw" } }}
             underlined
             labelPlaceholder="Username"
-            as="input"
           />
           <Spacer y={2} />
           <Input
@@ -54,10 +53,9 @@ const LandingPage = () => {
             css={{ width: "60vw", "@xs": { width: "15vw" } }}
             underlined
             labelPlaceholder="location (optional)"
-            as="input"
           />
           <Spacer y={1.5} />
-          <Button onPress={onClickHandler} css={{ backgroundColor: "$lightGreen", outline: "transparent" }} auto>continue</Button >
+          <Button onPress={onClickHandler} css={{ backgroundColor: "$green1", outline: "transparent" }} auto>continue</Button >
         </Container>
       </div>
     </>

@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <div className={styles["main"]}>
-      <Text className={styles["main__txt"]} weight={"medium"} size={"1.5em"} color="$darkGreen" >
+      <Text className={styles["main__txt"]} weight={"medium"} size={"2em"} >
         KIU exchange
       </Text>
       <Link
@@ -14,7 +14,7 @@ const Header = () => {
         target="_blank"
         className={styles["main__link"]}
       >
-        <Image src={"/github.svg"} width={"30px"} />
+        <Image src={"/github.svg"} width={"35px"} />
       </Link>
     </div >
   );

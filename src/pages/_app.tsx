@@ -5,9 +5,13 @@ const myLightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
-      pink: 'rgba(217, 139, 139, 0.3)',
-      darkGreen: "#255459",
-      lightGreen: "#177373",
+      green1: "#145672",
+      green2: "#26b3b3",
+      green3: "#22b651",
+      purple1: "#9d64d5",
+      pink1: "#de5da4",
+      pink2: "#de3994",
+      pink3: "#cc348d",
     },
     space: {},
     fonts: {}

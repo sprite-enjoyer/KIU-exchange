@@ -1,8 +1,10 @@
+@use "./mainTheme.module.scss" as main;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 .main {
 
-  position: relative;
+  position: absolute;
+  top: 0;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -14,19 +16,17 @@
   &__txt {
     padding: 5px;
     margin: 0;
-    background-image: linear-gradient(to right, #377b83, #1f9696, #038b03);
+    background-image: main.$gradientGreen;
     background-clip: inherit;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
   }
 
   &__link {
 
     position: absolute;
-    right: 20px;
+    right: 25px;
     cursor: pointer;
-
   }
 
 }
