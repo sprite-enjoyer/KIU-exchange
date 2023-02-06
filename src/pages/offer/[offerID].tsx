@@ -38,7 +38,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
         responsive
         display="flex"
         justify="center"
-        css={{ marginTop: "15vh", padding: "0" }}
+        css={{ margin: 0, marginTop: "100px", padding: "0" }}
       >
         <OfferCard
           offerID={offerID}
@@ -50,7 +50,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
           mini={false}
         />
       </Container>
-      <div style={{ height: "5px", width: "100vw" }} />
+      <div style={{ height: "5px", width: "100vw", margin: "0" }} />
       <Container
         responsive
         fluid
@@ -59,6 +59,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
         justify="center"
         alignContent="center"
         alignItems="center"
+        css={{ margin: "0", padding: "0" }}
       >
         <Input
           css={{ width: "60vw", "@xs": { width: "15vw" } }}
@@ -76,7 +77,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
         <Spacer y={2} />
         <Button
           onPress={onClickHandler}
-          css={{ backgroundColor: "$green1", outline: "transparent", width: "80px" }}
+          css={{ backgroundColor: "$green1", outline: "transparent", minWidth: "80px" }}
         >
           Contact to exchange
         </Button>

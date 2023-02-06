@@ -12,6 +12,8 @@ const myLightTheme = createTheme({
       pink1: "#de5da4",
       pink2: "#de3994",
       pink3: "#cc348d",
+      gradientGreen: "linear-gradient(to right, #145672, #26b3b3, #22b651)",
+      gradientPink: "linear-gradient(to right, #9d64d5, #de5da4, #de3994, #cc348d)",
     },
     space: {},
     fonts: {}
