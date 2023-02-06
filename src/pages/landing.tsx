@@ -32,7 +32,7 @@ const LandingPage = () => {
       <Header LeftComponent={undefined} />
       <div className={styles["main"]}>
         <Container
-          css={{ marginBottom: "20vh", "@xs": { marginBottom: "10vh" } }}
+          css={{ padding: "0" }}
           responsive
           display="flex"
           direction="column"
@@ -45,7 +45,6 @@ const LandingPage = () => {
               borderWeight="light"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              css={{ width: "60vw", "@xs": { width: "15vw" } }}
               labelPlaceholder="Username"
             />
             <Spacer y={2} />
@@ -54,7 +53,6 @@ const LandingPage = () => {
               borderWeight="light"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              css={{ width: "60vw", "@xs": { width: "15vw" } }}
               labelPlaceholder="location (optional)"
             />
             <Spacer y={1.5} />
