@@ -3,5 +3,50 @@
 .main {
   @include main.mainTheme;
   height: auto;
-  padding: 10px;
+
+  &__infoContainer {
+    @include main.glassyDiv;
+    padding: 50px 20px 20px 20px;
+    border-bottom: 4px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+
+    &__middleDiv {
+      padding: 5px 5px 20px 5px;
+    }
+
+    &__bottomDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+    }
+  }
+}
+
+.itemWanted {
+  background: main.$gradientPink;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.itemOffered {
+  background: main.$gradientGreen;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  background-color: main.$green5;
+  min-width: 0;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

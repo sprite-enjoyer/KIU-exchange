@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
-import OfferCard, { OfferProps } from "@/components/OfferCard";
-import { Button, Container, Input, PressEvent, Spacer, Textarea } from "@nextui-org/react";
+import { OfferProps } from "@/components/OfferCard";
+import { Button, Card, Col, Container, Input, PressEvent, Row, Text, Textarea, Image, Spacer } from "@nextui-org/react";
 import styles from "../../styles/offer.module.scss";
 import Header from "@/components/Header";
 
@@ -18,12 +18,11 @@ export const getServerSideProps: GetServerSideProps<OfferProps> = async (context
       itemWanted: "zooparki",
       location: "F344",
       description: "zaan magari ragaca",
-      mini: false
     }
   };
 };
 
-const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, description, mini }: OfferProps) => {
+const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
 
   const onClickHandler = (e: PressEvent) => {
     //TODO
@@ -31,60 +30,85 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
   };
 
   return (
-    <Container fluid responsive className={styles["main"]}>
+    <>
       <Header LeftComponent={undefined} />
-      <Container
-        fluid
-        responsive
-        display="flex"
-        justify="center"
-        css={{ margin: 0, marginTop: "100px", padding: "0" }}
-      >
-        <OfferCard
-          offerID={offerID}
-          offerMaker={offerMaker}
-          itemWanted={itemWanted}
-          itemOffered={itemOffered}
-          location={location}
-          description={description}
-          mini={false}
-        />
+      <Container fluid responsive className={styles["main"]}>
+        <div className={styles["main__infoContainer"]}>
+          <Container
+            display="flex"
+            justify="center"
+            alignItems="center"
+          >
+            <Row fluid justify="center" align="center" gap={1} >
+              <Col css={{ display: "flex", justifyContent: "center" }} span={12} >
+                <Text h4 className={styles["itemWanted"]}>{itemWanted}</Text>
+              </Col>
+              <Col span={4} >
+                <Image src="\logo.svg" width={20} />
+              </Col>
+              <Col css={{ display: "flex", justifyContent: "center" }} span={12}>
+                <Text h4 className={styles["itemOffered"]} >{itemOffered}</Text>
+              </Col>
+            </Row>
+          </Container>
+          <Spacer />
+          <div className={styles["main__infoContainer__middleDiv"]} >
+            <Text b>User: <Text>{offerMaker}</Text></Text>
+            <Text b>location: <Text>{location}</Text> </Text>
+            <Spacer y={0.5} />
+            <Text>
+              User "{offerMaker}" {" "}
+              wants "{itemWanted}" and
+              offers "{itemOffered}" in return.
+              The location of the exchange will be "{location}".
+            </Text>
+          </div>
+          <div className={styles["main__infoContainer__bottomDiv"]} >
+            <Input
+              aria-label="E-mail"
+              labelLeft={<span style={{ minWidth: "50px" }} >E-mail:</span>}
+              bordered
+              borderWeight="light"
+              width="80%"
+              type={"email"}
+            />
+            <Textarea
+              aria-label="Additioinal information"
+              placeholder="Additional information"
+              bordered
+              borderWeight="light"
+              width="80%"
+            />
+            <Button
+              className={styles["btn"]}
+              onPress={onClickHandler}
+            >
+              Contact to exchange
+            </Button>
+          </div>
+        </div>
       </Container>
-      <div style={{ height: "5px", width: "100vw", margin: "0" }} />
-      <Container
-        responsive
-        fluid
-        display="flex"
-        direction="column"
-        justify="center"
-        alignContent="center"
-        alignItems="center"
-        css={{ margin: "0", padding: "0" }}
-      >
-        <Input
-          css={{ width: "60vw", "@xs": { width: "15vw" } }}
-          underlined
-          labelPlaceholder="E-mail"
-        />
-        <Spacer y={2} />
-        <Textarea
-          css={{ width: "60vw", "@xs": { width: "15vw" } }}
-          underlined
-          labelPlaceholder="Comment"
-          minRows={2}
-          maxRows={4}
-        />
-        <Spacer y={2} />
-        <Button
-          onPress={onClickHandler}
-          css={{ backgroundColor: "$green1", outline: "transparent", minWidth: "80px" }}
-        >
-          Contact to exchange
-        </Button>
-      </Container>
-    </Container >
+    </>
   );
 };
 
 
 export default offer;
+
+
+
+
+
+// {
+//   <>
+//     <Card.Divider height={1} css={{ backgroundColor: "#177373" }} />
+//     <Card.Footer css={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+
+//       <Spacer y={0.5} />
+//       <Text h5 b>Additional information: </Text>
+//       <Text>
+//         {description}
+//       </Text>
+//     </Card.Footer>
+//   </>
+// }

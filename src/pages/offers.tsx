@@ -6,7 +6,7 @@ import { Button, Checkbox, Container, Text } from "@nextui-org/react";
 import { useState } from "react";
 import AddOfferModal, { AddOfferProps } from "@/components/AddOfferModal";
 
-const fakeOffersList: Omit<OfferProps, "mini">[] = [
+const fakeOffersList: OfferProps[] = [
   {
     offerID: 1,
     offerMaker: "bilbo leggings",
@@ -74,9 +74,8 @@ const offers = () => {
           itemWanted={"xelis kremi"}
           location="F344"
           description="kai rame ra"
-          mini={true}
           itemOffered={"xinkali"} />
-        {fakeOffersList.map((offer: Omit<OfferProps, "mini">) =>
+        {fakeOffersList.map((offer: OfferProps) =>
           <OfferCard
             key={offer.offerID}
             offerID={offer.offerID}
@@ -85,7 +84,6 @@ const offers = () => {
             itemOffered={offer.itemOffered}
             location={offer.location}
             description={offer.description}
-            mini
           />)}
       </Container>
     </Container>

@@ -2,23 +2,18 @@
 
 .main {
   @include main.mainTheme;
+  display: flex;
+  justify-content: center;
+
 
   &__inputGroup {
-
+    @include main.glassyDiv;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px 20px 20px 20px;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.30);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.671), rgba(255, 255, 255, 0.375));
-    min-width: 350px;
-    max-width: 90vw;
-    width: calc(320px + 5vw);
+
   }
 
   &__btn {

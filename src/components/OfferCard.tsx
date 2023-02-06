@@ -8,13 +8,11 @@ export interface OfferProps {
   itemOffered: string,
   location: string,
   description: string,
-  mini: boolean
 }
 
-const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, description, mini }: OfferProps) => {
+const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
 
   const onClickHandler = () => {
-    if (!mini) return;
     //TODO redirect to card details with offerID.
   }
   return (
@@ -50,25 +48,6 @@ const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, des
           </Row>
         </Container>
       </Card.Body>
-      {
-        !mini &&
-        <>
-          <Card.Divider height={1} css={{ backgroundColor: "#177373" }} />
-          <Card.Footer css={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-            <Text>
-              User "{offerMaker}" {" "}
-              wants "{itemWanted}" and
-              offers "{itemOffered}" in return.
-              The location of the exchange will be "{location}".
-            </Text>
-            <Spacer y={0.5} />
-            <Text h5 b>Additional information: </Text>
-            <Text>
-              {description}
-            </Text>
-          </Card.Footer>
-        </>
-      }
     </Card>
   );
 };
