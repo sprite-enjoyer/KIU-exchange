@@ -49,7 +49,7 @@ const offers = () => {
   const HeaderButton = () => {
     return (
       <Button onPress={onClickHandler} className={styles["headerButton"]}>
-        <Text h4 color="white" css={{ margin: "0" }}>add</Text>
+        <Text h4 color="white" css={{ margin: "0" }}>Add</Text>
       </Button>
     );
   };

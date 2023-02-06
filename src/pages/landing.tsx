@@ -39,23 +39,27 @@ const LandingPage = () => {
           justify="center"
           alignItems="center"
         >
-          <Input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            css={{ width: "60vw", "@xs": { width: "15vw" } }}
-            underlined
-            labelPlaceholder="Username"
-          />
-          <Spacer y={2} />
-          <Input
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            css={{ width: "60vw", "@xs": { width: "15vw" } }}
-            underlined
-            labelPlaceholder="location (optional)"
-          />
-          <Spacer y={1.5} />
-          <Button onPress={onClickHandler} css={{ backgroundColor: "$green1", outline: "transparent" }} auto>continue</Button >
+          <div className={styles["main__inputGroup"]} >
+            <Input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              css={{ width: "60vw", "@xs": { width: "15vw" } }}
+              underlined
+              labelPlaceholder="Username"
+            />
+            <Spacer y={2} />
+            <Input
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              css={{ width: "60vw", "@xs": { width: "15vw" } }}
+              underlined
+              labelPlaceholder="location (optional)"
+            />
+            <Spacer y={1.5} />
+            <Button onPress={onClickHandler} css={{ backgroundColor: "$green1", outline: "transparent" }} auto>
+              continue
+            </Button >
+          </div>
         </Container>
       </div>
     </>

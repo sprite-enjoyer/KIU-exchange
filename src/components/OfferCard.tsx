@@ -18,7 +18,9 @@ const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, des
     //TODO redirect to card details with offerID.
   }
   return (
-    <Card isHoverable isPressable
+    <Card
+      isHoverable
+      isPressable
       variant="bordered"
       css={{ width: "350px", minHeight: "150px", height: "fit-content", outline: "transparent", padding: "0" }}
       onPress={onClickHandler}
@@ -44,7 +46,6 @@ const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, des
             </Col>
             <Col css={{ display: "flex", justifyContent: "center" }} span={12}>
               <Text h4 className={styles["itemOffered"]} >{itemOffered}</Text>
-
             </Col>
           </Row>
         </Container>

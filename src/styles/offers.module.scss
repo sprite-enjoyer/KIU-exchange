@@ -3,6 +3,9 @@
 .main {
   @include main.mainTheme;
   height: auto;
+  padding-left: 3px;
+  padding-right: 3px;
+
 }
 
 .headerButton {
