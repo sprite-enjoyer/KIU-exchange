@@ -10,12 +10,11 @@
 
 .headerButton {
   position: absolute;
-  background: main.$gradientPink;
+  background-color: main.$green5;
   min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: 0 10px 0 10px;
   left: 10px;
 }
