@@ -2,7 +2,9 @@ import Header from "@/components/Header";
 import OfferCard from "@/components/OfferCard";
 import styles from "../styles/offers.module.scss";
 import { OfferProps } from "@/components/OfferCard";
-import { Container } from "@nextui-org/react";
+import { Button, Checkbox, Container, Text } from "@nextui-org/react";
+import { useState } from "react";
+import AddOfferModal, { AddOfferProps } from "@/components/AddOfferModal";
 
 const fakeOffersList: Omit<OfferProps, "mini">[] = [
   {
@@ -39,9 +41,25 @@ const fakeOffersList: Omit<OfferProps, "mini">[] = [
 ];
 
 const offers = () => {
+
+  const [visible, setVisible] = useState(false);
+  const onClickHandler = () => setVisible(true);
+  const closeHandler = () => setVisible(false);
+
+  const HeaderButton = () => {
+    return (
+      <Button onPress={onClickHandler} className={styles["headerButton"]}>
+        <Text h4 color="white" css={{ margin: "0" }}>add</Text>
+      </Button>
+    );
+  };
+
   return (
     <Container responsive fluid className={styles["main"]} >
-      <Header />
+      <Header LeftComponent={() => <HeaderButton />} />
+      <AddOfferModal visible={visible} closeHandler={closeHandler} addOffer={function ({ offerMaker, itemOffered, itemWanted, description, location, email }: AddOfferProps): void {
+        throw new Error("Function not implemented.");
+      }} />
       <Container
         display="flex"
         direction="column"

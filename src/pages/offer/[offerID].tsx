@@ -32,7 +32,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
 
   return (
     <Container fluid responsive className={styles["main"]}>
-      <Header />
+      <Header LeftComponent={undefined} />
       <Container
         fluid
         responsive

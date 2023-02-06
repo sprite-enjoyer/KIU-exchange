@@ -1,11 +1,15 @@
 import styles from "../styles/header.module.scss";
 import { Image, Link, Text } from "@nextui-org/react";
 
+export interface HeaderProps {
+  LeftComponent: ((() => JSX.Element) | undefined),
+}
 
-const Header = () => {
+const Header = ({ LeftComponent }: HeaderProps) => {
 
   return (
     <div className={styles["main"]}>
+      {LeftComponent && <LeftComponent />}
       <Text className={styles["main__txt"]} weight={"medium"} size={"2em"} >
         KIU exchange
       </Text>

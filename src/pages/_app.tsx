@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { NextUIProvider, createTheme } from '@nextui-org/react';
+import { NextUIProvider, createTheme, } from '@nextui-org/react';
 
 const myLightTheme = createTheme({
   type: "light",
@@ -23,6 +23,7 @@ const myLightTheme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
 
   return (
+
     <NextUIProvider theme={myLightTheme}>
       <Component {...pageProps} />
     </NextUIProvider>

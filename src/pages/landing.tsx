@@ -29,7 +29,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <Header />
+      <Header LeftComponent={undefined} />
       <div className={styles["main"]}>
         <Container
           css={{ marginBottom: "20vh", "@xs": { marginBottom: "10vh" } }}

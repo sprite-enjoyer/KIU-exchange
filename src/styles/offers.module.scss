@@ -4,3 +4,15 @@
   @include main.mainTheme;
   height: auto;
 }
+
+.headerButton {
+  position: absolute;
+  background: main.$gradientPink;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0 10px 0 10px;
+  left: 10px;
+}
