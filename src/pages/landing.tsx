@@ -41,22 +41,24 @@ const LandingPage = () => {
         >
           <div className={styles["main__inputGroup"]} >
             <Input
+              bordered
+              borderWeight="light"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               css={{ width: "60vw", "@xs": { width: "15vw" } }}
-              underlined
               labelPlaceholder="Username"
             />
             <Spacer y={2} />
             <Input
+              bordered
+              borderWeight="light"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               css={{ width: "60vw", "@xs": { width: "15vw" } }}
-              underlined
               labelPlaceholder="location (optional)"
             />
             <Spacer y={1.5} />
-            <Button onPress={onClickHandler} css={{ backgroundColor: "$green1", outline: "transparent" }} auto>
+            <Button auto className={styles["main__btn"]} onPress={onClickHandler}>
               continue
             </Button >
           </div>
