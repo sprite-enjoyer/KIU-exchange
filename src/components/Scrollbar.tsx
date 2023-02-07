@@ -7,6 +7,9 @@ const scrollbarProperties = `
   
   ::-webkit-scrollbar-thumb {
   background-color: #17C964;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;  
   }
   
   ::-webkit-scrollbar-track {
@@ -22,6 +25,9 @@ const scrollbarProperties = `
   
   ::-moz-scrollbar-thumb {
   background-color: #17C964;
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;  
   }
   
   ::-moz-scrollbar-track {
@@ -29,7 +35,6 @@ const scrollbarProperties = `
   border-radius: 10px;
   background-color: #E6E6E6;
   }
-  
 `
 
 const Scrollbar = () => <style jsx global>{scrollbarProperties}</style>

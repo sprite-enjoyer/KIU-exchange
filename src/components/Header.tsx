@@ -1,5 +1,5 @@
 import styles from "../styles/header.module.scss";
-import { Image, Link, Text } from "@nextui-org/react";
+import { Link, Text, Image } from "@nextui-org/react";
 
 export interface HeaderProps {
   LeftComponent: ((() => JSX.Element) | undefined),
@@ -18,7 +18,7 @@ const Header = ({ LeftComponent }: HeaderProps) => {
         target="_blank"
         className={styles["main__link"]}
       >
-        <Image src={"/github.svg"} width={"35px"} />
+        <Image css={{ background: "transparent" }} src={"/github.svg"} width={"35px"} />
       </Link>
     </div >
   );

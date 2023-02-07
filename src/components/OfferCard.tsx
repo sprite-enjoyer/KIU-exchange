@@ -16,13 +16,7 @@ const OfferCard = ({ offerMaker, itemOffered, itemWanted, location, description 
   };
 
   return (
-    <Card
-      isHoverable
-      isPressable
-      variant="bordered"
-      css={{ width: "350px", minHeight: "150px", height: "fit-content", outline: "transparent", padding: "0" }}
-      onPress={onClickHandler}
-    >
+    <Card isHoverable isPressable variant="bordered" className={styles["main"]} onPress={onClickHandler}>
       <Card.Header css={{ display: "flex", justifyContent: "space-between" }} >
         <Text b>{offerMaker}</Text>
         <Text >{location}</Text>
@@ -32,7 +26,7 @@ const OfferCard = ({ offerMaker, itemOffered, itemWanted, location, description 
         <Container
           css={{ width: "100%", height: "100%", padding: "0" }}
           display="flex"
-          justify="center"
+          justify="space-around"
           alignItems="center"
         >
           <Row fluid justify="center" align="center" gap={1} >

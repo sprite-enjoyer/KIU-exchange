@@ -96,7 +96,7 @@ const AddOfferModal = ({ visible, closeHandler }: AddOfferModalProps) => {
         />
       </Modal.Body>
       <Modal.Footer css={{ display: "flex", justifyContent: "center" }}>
-        <Button auto onPress={onClickHandler} css={{ backgroundColor: "$green1" }}>Add offer</Button>
+        <Button auto onPress={onClickHandler} css={{ backgroundColor: "$green3" }}>Add offer</Button>
       </Modal.Footer>
     </Modal>
   );

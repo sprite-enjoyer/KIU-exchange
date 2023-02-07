@@ -1,5 +1,12 @@
 @use "../styles/mainTheme.module.scss" as main;
 
+
+.main {
+  @include main.glassyDiv;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5));
+
+}
+
 .itemWanted {
   background: main.$gradientPink;
   background-clip: inherit;
