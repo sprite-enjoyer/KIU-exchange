@@ -1,0 +1,8 @@
+@use "./mainTheme.module.scss" as main;
+
+.main {
+  @include main.mainTheme;
+  flex-direction: column;
+  height: auto;
+
+}
