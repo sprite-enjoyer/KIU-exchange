@@ -27,7 +27,6 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
 
   const onClickHandler = (e: PressEvent) => {
     //TODO
-    console.log("TODO!")
   };
 
   return (

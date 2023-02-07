@@ -34,34 +34,36 @@ const offers = ({ offersList }: OffersProps) => {
   };
 
   return (
-    <div className={styles["main"]} >
+    <>
       <Header LeftComponent={() => <HeaderButton />} />
-      <AddOfferModal visible={visible} closeHandler={closeHandler} addOffer={function ({ offerMaker, itemOffered, itemWanted, description, location, email }: AddOfferProps): void {
-        throw new Error("Function not implemented.");
-      }} />
-      <Container
-        display="flex"
-        direction="column"
-        justify="center"
-        alignContent="center"
-        css={{ marginTop: "15vh", gap: "20px", marginBottom: "50px" }}
-      >
-        <Scrollbar />
-        {
-          offersList.map((offer: Offer) =>
-            <OfferCard
-              key={offer.number}
-              offerID={offer.number}
-              offerMaker={offer.offerMaker}
-              itemWanted={offer.itemWanted ?? "not specified"}
-              itemOffered={offer.itemOffered ?? "not specified"}
-              location={offer.exchangeLocation}
-              description={offer.description}
-            />)
-        }
-      </Container>
-    </div>
-  )
-}
+      <div className={styles["main"]} >
+        <AddOfferModal visible={visible} closeHandler={closeHandler} addOffer={function ({ offerMaker, itemOffered, itemWanted, description, location, email }: AddOfferProps): void {
+          throw new Error("Function not implemented.");
+        }} />
+        <Container
+          display="flex"
+          direction="column"
+          justify="center"
+          alignContent="center"
+          css={{ marginTop: "15vh", gap: "20px", marginBottom: "50px" }}
+        >
+          <Scrollbar />
+          {
+            offersList.map((offer: Offer) =>
+              <OfferCard
+                key={offer.number}
+                offerID={offer.number}
+                offerMaker={offer.offerMaker}
+                itemWanted={offer.itemWanted ?? "not specified"}
+                itemOffered={offer.itemOffered ?? "not specified"}
+                location={offer.exchangeLocation}
+                description={offer.description}
+              />)
+          }
+        </Container>
+      </div>
+    </>
+  );
+};
 
 export default offers;
