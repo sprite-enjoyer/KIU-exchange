@@ -1,7 +1,10 @@
 import { Card, Container, Row, Text, Image, Col, Spacer } from "@nextui-org/react";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 import styles from "../styles/offerCard.module.scss";
 
 export interface OfferProps {
+  id: string,
   offerMaker: string,
   itemWanted: string,
   itemOffered: string,
@@ -9,10 +12,11 @@ export interface OfferProps {
   description: string,
 }
 
-const OfferCard = ({ offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
+const OfferCard = ({ id, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
+  const router = useRouter();
 
   const onClickHandler = () => {
-    //TODO redirect to card details with offerID.
+    router.push(`/post/${id}`)
   };
 
   return (

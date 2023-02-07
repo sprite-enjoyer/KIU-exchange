@@ -49,6 +49,7 @@ const offers = ({ offersList }: OffersProps) => {
           {
             offersList.map((offer: Offer) =>
               <OfferCard
+                id={offer.id}
                 key={offer.id}
                 offerMaker={offer.offerMaker}
                 itemWanted={offer.itemWanted ?? "not specified"}
