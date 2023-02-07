@@ -6,6 +6,20 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+model Offer {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  number           Int      @unique
+  itemOffered      String?
+  itemWanted       String?
+  offerMaker       String
+  offerMakerMail   String
+  offerTakers      String[]
+  offerTakerMails  String[]
+  chosenTakerMail  String?
+  exchangeLocation String
+  description      String
 }
