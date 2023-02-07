@@ -43,7 +43,7 @@ const offers = ({ offersList }: OffersProps) => {
           direction="column"
           justify="center"
           alignContent="center"
-          css={{ marginTop: "15vh", gap: "20px", marginBottom: "50px" }}
+          css={{ marginTop: "15vh", gap: "20px", marginBottom: "50px", overflow: "hidden" }}
         >
           <Scrollbar />
           {
