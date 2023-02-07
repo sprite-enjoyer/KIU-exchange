@@ -10,14 +10,9 @@ const LandingPage = () => {
   const [location, setLocation] = useState('');
 
   const onClickHandler = (e: PressEvent) => {
-    console.log(username);
-    console.log(location);
 
     localStorage.setItem("KIUexchange_username", username);
     localStorage.setItem("KIUexchange_location", location);
-
-    console.log(localStorage.getItem("KIUexchange_username"));
-    console.log(localStorage.getItem("KIUexchange_location"));
 
   };
 

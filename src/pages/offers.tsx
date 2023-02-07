@@ -37,9 +37,7 @@ const offers = ({ offersList }: OffersProps) => {
     <>
       <Header LeftComponent={() => <HeaderButton />} />
       <div className={styles["main"]} >
-        <AddOfferModal visible={visible} closeHandler={closeHandler} addOffer={function ({ offerMaker, itemOffered, itemWanted, description, location, email }: AddOfferProps): void {
-          throw new Error("Function not implemented.");
-        }} />
+        <AddOfferModal visible={visible} closeHandler={closeHandler} />
         <Container
           display="flex"
           direction="column"
@@ -51,8 +49,7 @@ const offers = ({ offersList }: OffersProps) => {
           {
             offersList.map((offer: Offer) =>
               <OfferCard
-                key={offer.number}
-                offerID={offer.number}
+                key={offer.id}
                 offerMaker={offer.offerMaker}
                 itemWanted={offer.itemWanted ?? "not specified"}
                 itemOffered={offer.itemOffered ?? "not specified"}

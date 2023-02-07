@@ -2,7 +2,6 @@ import { Card, Container, Row, Text, Image, Col, Spacer } from "@nextui-org/reac
 import styles from "../styles/offerCard.module.scss";
 
 export interface OfferProps {
-  offerID: number,
   offerMaker: string,
   itemWanted: string,
   itemOffered: string,
@@ -10,11 +9,12 @@ export interface OfferProps {
   description: string,
 }
 
-const OfferCard = ({ offerID, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
+const OfferCard = ({ offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
 
   const onClickHandler = () => {
     //TODO redirect to card details with offerID.
-  }
+  };
+
   return (
     <Card
       isHoverable

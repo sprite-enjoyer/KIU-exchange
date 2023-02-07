@@ -12,7 +12,6 @@ datasource db {
 
 model Offer {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  number           Int      @unique
   itemOffered      String?
   itemWanted       String?
   offerMaker       String
