@@ -3,6 +3,7 @@ import { OfferProps } from "@/components/OfferCard";
 import { Button, Card, Col, Container, Input, PressEvent, Row, Text, Textarea, Image, Spacer } from "@nextui-org/react";
 import styles from "../../styles/offer.module.scss";
 import Header from "@/components/Header";
+import Scrollbar from "@/components/Scrollbar";
 
 export const getServerSideProps: GetServerSideProps<OfferProps> = async (context) => {
   const offerID = context.params?.offerID;
@@ -31,6 +32,7 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
 
   return (
     <>
+      <Scrollbar />
       <Header LeftComponent={undefined} />
       <Container fluid responsive className={styles["main"]}>
         <div className={styles["main__infoContainer"]}>

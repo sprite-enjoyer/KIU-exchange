@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import styles from "../styles/landing.module.scss";
 import { Button, Container, Input, PressEvent, Spacer } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import Scrollbar from "@/components/Scrollbar";
 
 const LandingPage = () => {
 
@@ -29,6 +30,7 @@ const LandingPage = () => {
 
   return (
     <>
+      <Scrollbar />
       <Header LeftComponent={undefined} />
       <div className={styles["main"]}>
         <Container

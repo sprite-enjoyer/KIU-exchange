@@ -2,6 +2,8 @@
 
 .main {
   @include main.mainTheme;
+  display: flex;
+  flex-direction: column;
   height: auto;
   padding-left: 3px;
   padding-right: 3px;
@@ -17,4 +19,5 @@
   align-items: center;
   align-content: center;
   left: 10px;
+
 }

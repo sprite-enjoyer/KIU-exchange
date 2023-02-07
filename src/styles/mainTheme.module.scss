@@ -39,3 +39,37 @@ $gradientPink: linear-gradient(to right, #9d64d5, #de5da4, #de3994, #cc348d);
   max-width: 90vw;
   width: calc(320px + 5vw);
 }
+
+@mixin customScrollbar {
+
+  ::-webkit-scrollbar {
+    width: 0.2em;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+
+  ::-moz-scrollbar {
+    width: 0.2em;
+    background-color: #F5F5F5;
+  }
+
+  ::-moz-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+  ::-moz-scrollbar-track {
+    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+
+}

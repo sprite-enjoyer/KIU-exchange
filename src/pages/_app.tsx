@@ -26,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     <NextUIProvider theme={myLightTheme}>
       <Component {...pageProps} />
+
     </NextUIProvider>
   );
 }
