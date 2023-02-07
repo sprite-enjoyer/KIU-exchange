@@ -14,10 +14,7 @@ export interface OfferProps {
 
 const OfferCard = ({ id, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
   const router = useRouter();
-
-  const onClickHandler = () => {
-    router.push(`/post/${id}`)
-  };
+  const onClickHandler = () => router.push(`/offer/${id}`);
 
   return (
     <Card isHoverable isPressable variant="bordered" className={styles["main"]} onPress={onClickHandler}>

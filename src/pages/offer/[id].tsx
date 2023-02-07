@@ -1,29 +1,23 @@
-import { GetServerSideProps } from "next";
+import { GetServerSidePropsContext } from "next";
 import { OfferProps } from "@/components/OfferCard";
-import { Button, Card, Col, Container, Input, PressEvent, Row, Text, Textarea, Image, Spacer } from "@nextui-org/react";
+import { Button, Col, Container, Input, PressEvent, Row, Text, Textarea, Image, Spacer } from "@nextui-org/react";
 import styles from "../../styles/offer.module.scss";
 import Header from "@/components/Header";
 import Scrollbar from "@/components/Scrollbar";
+import prismaClient from "prisma/prisma";
+import { Offer } from "@prisma/client";
 
-export const getServerSideProps: GetServerSideProps<OfferProps> = async (context) => {
-  const offerID = context.params?.offerID;
-  //TODO lookup the offerID in the database
-  //If offer exists, return information as props.
-  //If offer doesn't exist, redirect to not found page.
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  let id = context.params?.id ? context.params?.id.toString() : "";
+  const redirectObj = { redirect: { destination: "/404" } };
 
-  return {
-    props: {
-      offerID: 15,
-      offerMaker: "me",
-      itemOffered: "tvitmprinavi",
-      itemWanted: "zooparki",
-      location: "F344",
-      description: "zaan magari ragaca",
-    }
-  };
+  const offer = await prismaClient.offer.findUnique({ where: { id: id } });
+  if (!offer) return redirectObj;
+
+  return offer ? { props: { ...offer } } : redirectObj
 };
 
-const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, description }: OfferProps) => {
+const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, description }: Offer) => {
 
   const onClickHandler = (e: PressEvent) => {
     //TODO
@@ -55,13 +49,13 @@ const offer = ({ offerID, offerMaker, itemOffered, itemWanted, location, descrip
           <Spacer />
           <div className={styles["main__infoContainer__middleDiv"]} >
             <Text b>User: <Text>{offerMaker}</Text></Text>
-            <Text b>location: <Text>{location}</Text> </Text>
+            <Text b>location: <Text>{exchangeLocation.toString()}</Text> </Text>
             <Spacer y={0.5} />
             <Text>
               User "{offerMaker}" {" "}
               wants "{itemWanted}" and
               offers "{itemOffered}" in return.
-              The location of the exchange will be "{location}".
+              The location of the exchange will be "{exchangeLocation.toString()}".
             </Text>
           </div>
           <div className={styles["main__infoContainer__bottomDiv"]} >
