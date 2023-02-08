@@ -102,5 +102,5 @@ const AddOfferModal = ({ visible, closeHandler }: AddOfferModalProps) => {
   );
 };
 
-
+//
 export default AddOfferModal;
