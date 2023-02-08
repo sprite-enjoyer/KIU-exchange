@@ -3,17 +3,18 @@ import styles from "../styles/landing.module.scss";
 import { Button, Container, Input, PressEvent, Spacer } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Scrollbar from "@/components/Scrollbar";
+import { useRouter } from "next/router";
 
 const LandingPage = () => {
-
+  const router = useRouter();
   const [username, setUsername] = useState('');
   const [location, setLocation] = useState('');
 
   const onClickHandler = (e: PressEvent) => {
-
     localStorage.setItem("KIUexchange_username", username);
     localStorage.setItem("KIUexchange_location", location);
 
+    router.push("/offers");
   };
 
   useEffect(() => {

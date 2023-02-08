@@ -1,26 +1,44 @@
 import { GetServerSidePropsContext } from "next";
-import { OfferProps } from "@/components/OfferCard";
 import { Button, Col, Container, Input, PressEvent, Row, Text, Textarea, Image, Spacer } from "@nextui-org/react";
 import styles from "../../styles/offer.module.scss";
 import Header from "@/components/Header";
 import Scrollbar from "@/components/Scrollbar";
 import prismaClient from "prisma/prisma";
 import { Offer } from "@prisma/client";
+import { MutableRefObject, Ref, useRef } from "react";
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   let id = context.params?.id ? context.params?.id.toString() : "";
   const redirectObj = { redirect: { destination: "/404" } };
 
-  const offer = await prismaClient.offer.findUnique({ where: { id: id } });
+  const offer: Offer | null = await prismaClient.offer.findUnique({ where: { id: id } });
   if (!offer) return redirectObj;
 
   return offer ? { props: { ...offer } } : redirectObj
 };
 
-const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, description }: Offer) => {
+const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, description, offerMakerMail }: Offer) => {
 
-  const onClickHandler = (e: PressEvent) => {
-    //TODO
+  const emailRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
+  const additionalInfoRef: Ref<HTMLTextAreaElement> | undefined = useRef(null);
+
+  const onClickHandler = async (e: PressEvent) => {
+    const offerTakerMail = emailRef.current?.value;
+    const comment = additionalInfoRef.current?.value ?? "";
+    if (typeof offerTakerMail !== "string") return;
+
+    const offer = {
+      offerMaker: offerMaker,
+      offerTaker: localStorage.getItem("KIUexchange_username") ?? "unknown",
+      offerMakerMail: offerMakerMail,
+      offerTakerMail: offerTakerMail,
+      comment: comment
+    };
+
+    await fetch("/api/acceptOffer", {
+      method: "POST", body: JSON.stringify(offer)
+    });
+
   };
 
   return (
@@ -60,6 +78,7 @@ const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, desc
           </div>
           <div className={styles["main__infoContainer__bottomDiv"]} >
             <Input
+              ref={emailRef}
               aria-label="E-mail"
               labelLeft={<span style={{ minWidth: "50px" }} >E-mail:</span>}
               bordered
@@ -68,6 +87,7 @@ const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, desc
               type={"email"}
             />
             <Textarea
+              ref={additionalInfoRef}
               aria-label="Additioinal information"
               placeholder="Additional information"
               bordered
@@ -87,23 +107,4 @@ const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, desc
   );
 };
 
-
 export default offer;
-
-
-
-
-
-// {
-//   <>
-//     <Card.Divider height={1} css={{ backgroundColor: "#177373" }} />
-//     <Card.Footer css={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-
-//       <Spacer y={0.5} />
-//       <Text h5 b>Additional information: </Text>
-//       <Text>
-//         {description}
-//       </Text>
-//     </Card.Footer>
-//   </>
-// }
