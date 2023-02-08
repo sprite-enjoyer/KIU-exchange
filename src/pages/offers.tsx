@@ -8,6 +8,7 @@ import Scrollbar from "@/components/Scrollbar";
 import { GetServerSideProps } from "next/types";
 import prismaClient from "prisma/prisma";
 import { Offer } from "@prisma/client";
+import noUserRedirect from "@/helpers/NoUserRedirect";
 
 export interface OffersProps {
   offersList: Offer[]
@@ -26,6 +27,8 @@ const offers = ({ offersList }: OffersProps) => {
   const closeHandler = () => setVisible(false);
 
   const HeaderButton = () => {
+    noUserRedirect();
+
     return (
       <Button color={"success"} onPress={onClickHandler} className={styles["headerButton"]}>
         <Text h4 color="white" css={{ margin: "0" }}>Add</Text>

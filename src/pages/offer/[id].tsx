@@ -6,6 +6,7 @@ import Scrollbar from "@/components/Scrollbar";
 import prismaClient from "prisma/prisma";
 import { Offer } from "@prisma/client";
 import { MutableRefObject, Ref, useRef } from "react";
+import noUserRedirect from "@/helpers/NoUserRedirect";
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   let id = context.params?.id ? context.params?.id.toString() : "";
@@ -18,6 +19,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
 };
 
 const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, description, offerMakerMail }: Offer) => {
+  noUserRedirect();
 
   const emailRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
   const additionalInfoRef: Ref<HTMLTextAreaElement> | undefined = useRef(null);
