@@ -95,6 +95,7 @@ const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, desc
               width="80%"
             />
             <Button
+              color={"success"}
               className={styles["btn"]}
               onPress={onClickHandler}
             >

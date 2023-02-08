@@ -27,7 +27,7 @@ const offers = ({ offersList }: OffersProps) => {
 
   const HeaderButton = () => {
     return (
-      <Button onPress={onClickHandler} className={styles["headerButton"]}>
+      <Button color={"success"} onPress={onClickHandler} className={styles["headerButton"]}>
         <Text h4 color="white" css={{ margin: "0" }}>Add</Text>
       </Button>
     );

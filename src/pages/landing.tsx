@@ -54,7 +54,7 @@ const LandingPage = () => {
               labelPlaceholder="location (optional)"
             />
             <Spacer y={1.5} />
-            <Button auto className={styles["main__btn"]} onPress={onClickHandler}>
+            <Button color={"success"} auto className={styles["main__btn"]} onPress={onClickHandler}>
               continue
             </Button >
           </div>

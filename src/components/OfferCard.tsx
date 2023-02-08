@@ -22,7 +22,7 @@ const OfferCard = ({ id, offerMaker, itemOffered, itemWanted, location, descript
         <Text b>{offerMaker}</Text>
         <Text >{location}</Text>
       </Card.Header>
-      <Card.Divider height={1} css={{ backgroundColor: "#177373" }} />
+      <Card.Divider height={1} />
       <Card.Body css={{ padding: "0", height: "80px", maxHeight: "80px" }}>
         <Container
           css={{ width: "100%", height: "100%", padding: "0" }}

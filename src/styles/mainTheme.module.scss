@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-$green1: #145672;
-$green2: #26b3b3;
-$green3: #22b651;
-$green4: #17C964;
-$green5: #12c75ac4;
-$purple1: #9d64d5;
-$pink: rgba(217, 139, 139, 0.3);
-$pink1: #de5da4;
-$pink2: #de3994;
-$pink3: #cc348d;
 $gradientGreen: linear-gradient(to right, #145672, #26b3b3, #22b651);
-$gradientPink: linear-gradient(to right, #9d64d5, #de5da4, #de3994, #cc348d);
 
 @mixin mainTheme {
   position: absolute;
@@ -25,18 +14,17 @@ $gradientPink: linear-gradient(to right, #9d64d5, #de5da4, #de3994, #cc348d);
   justify-content: center;
   align-items: center;
   font-family: "Lato", sans-serif;
-  background-color: $pink;
 }
 
 @mixin glassyDiv {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.30);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
+  border-radius: 5px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.671), rgba(255, 255, 255, 0.375));
   min-width: 350px;
   max-width: 90vw;
-  width: calc(320px + 5vw);
+  width: calc(280px + 5vw);
 
 }

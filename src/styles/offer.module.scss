@@ -7,9 +7,11 @@
   &__infoContainer {
     @include main.glassyDiv;
     padding: 50px 20px 20px 20px;
-    border-bottom: 4px solid gray;
+    border: 2px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    margin-top: 80px;
 
     &__middleDiv {
       padding: 5px 5px 20px 5px;
@@ -26,22 +28,7 @@
   }
 }
 
-.itemWanted {
-  background: main.$gradientPink;
-  background-clip: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.itemOffered {
-  background: main.$gradientGreen;
-  background-clip: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .btn {
-  background-color: main.$green5;
   min-width: 0;
   width: fit-content;
   display: flex;

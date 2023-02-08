@@ -18,7 +18,7 @@ const Header = ({ LeftComponent }: HeaderProps) => {
         target="_blank"
         className={styles["main__link"]}
       >
-        <Image css={{ background: "transparent" }} src={"/github.svg"} width={"35px"} />
+        <Image css={{ opacity: "40%" }} src={"/github.svg"} width={"25px"} />
       </Link>
     </div >
   );
