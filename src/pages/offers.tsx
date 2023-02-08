@@ -8,7 +8,7 @@ import Scrollbar from "@/components/Scrollbar";
 import { GetServerSideProps } from "next/types";
 import prismaClient from "prisma/prisma";
 import { Offer } from "@prisma/client";
-import noUserRedirect from "@/helpers/NoUserRedirect";
+import noUserRedirect from "@/helpers/noUserRedirect";
 
 export interface OffersProps {
   offersList: Offer[]

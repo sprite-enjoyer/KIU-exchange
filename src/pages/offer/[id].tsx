@@ -6,7 +6,7 @@ import Scrollbar from "@/components/Scrollbar";
 import prismaClient from "prisma/prisma";
 import { Offer } from "@prisma/client";
 import { MutableRefObject, Ref, useRef } from "react";
-import noUserRedirect from "@/helpers/NoUserRedirect";
+import noUserRedirect from "@/helpers/noUserRedirect";
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   let id = context.params?.id ? context.params?.id.toString() : "";

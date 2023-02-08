@@ -4,7 +4,7 @@ import { Button, Container, Input, PressEvent, Spacer } from "@nextui-org/react"
 import { useEffect, useState } from "react";
 import Scrollbar from "@/components/Scrollbar";
 import { useRouter } from "next/router";
-import noUserRedirect from "@/helpers/NoUserRedirect";
+import noUserRedirect from "@/helpers/noUserRedirect";
 
 const index = () => {
 
