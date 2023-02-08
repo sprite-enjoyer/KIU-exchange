@@ -19,7 +19,7 @@ const OfferCard = ({ id, offerMaker, itemOffered, itemWanted, location, descript
   return (
     <Card isHoverable isPressable variant="bordered" className={styles["main"]} onPress={onClickHandler}>
       <Card.Header css={{ display: "flex", justifyContent: "space-between" }} >
-        <Text b>{offerMaker}</Text>
+        <Text>{offerMaker}</Text>
         <Text >{location}</Text>
       </Card.Header>
       <Card.Divider height={1} />
