@@ -3,7 +3,7 @@ import OfferCard from "@/components/OfferCard";
 import styles from "../styles/offers.module.scss";
 import { Button, Container, Text } from "@nextui-org/react";
 import { useState } from "react";
-import AddOfferModal, { AddOfferProps } from "@/components/AddOfferModal";
+import AddOfferModal from "@/components/AddOfferModal";
 import Scrollbar from "@/components/Scrollbar";
 import { GetServerSideProps } from "next/types";
 import prismaClient from "prisma/prisma";
@@ -14,24 +14,23 @@ export interface OffersProps {
   offersList: Offer[]
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const offers = await prismaClient.offer.findMany();
   return { props: { offersList: offers } };
 
 };
 
 const offers = ({ offersList }: OffersProps) => {
+  noUserRedirect();
 
   const [visible, setVisible] = useState(false);
   const onClickHandler = () => setVisible(true);
   const closeHandler = () => setVisible(false);
 
   const HeaderButton = () => {
-    noUserRedirect();
-
     return (
       <Button color={"success"} onPress={onClickHandler} className={styles["headerButton"]}>
-        <Text h4 color="white" css={{ margin: "0" }}>Add</Text>
+        <Text size={"medium"} color="white" css={{ margin: "0" }}>Add</Text>
       </Button>
     );
   };
