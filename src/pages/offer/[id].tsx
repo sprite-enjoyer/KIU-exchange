@@ -77,6 +77,9 @@ const offer = ({ id, offerMaker, itemOffered, itemWanted, exchangeLocation, desc
               offers "{itemOffered}" in return.
               The location of the exchange will be "{exchangeLocation.toString()}".
             </Text>
+            <Spacer y={0.5} />
+            <Text h5>Additional info:</Text>
+            <Text>{description}</Text>
           </div>
           <div className={styles["main__infoContainer__bottomDiv"]} >
             <Input
